@@ -25,6 +25,7 @@ const toast = document.querySelector('#toast');
 const hasStaticDashboard = false;
 let hasRenderedDashboard = false;
 document.querySelectorAll('.nav-menu').forEach((menu) => { if (!menu.querySelector('a[href="registrations.html"]')) { const link = document.createElement('a'); link.className = 'nav-link'; link.href = 'registrations.html'; link.innerHTML = '<i class="fa-solid fa-clipboard-list"></i><span>Registrations</span>'; const submissions = menu.querySelector('[data-view="submissions"]'); if (submissions) submissions.before(link); } });
+document.querySelectorAll('.nav-menu').forEach((menu) => { if (!menu.querySelector('a[href="HACSA-VENDOR/index.html"]')) { const link = document.createElement('a'); link.className = 'nav-link portal-link'; link.href = 'HACSA-VENDOR/index.html'; link.innerHTML = '<i class="fa-solid fa-arrow-up-right-from-square"></i><span>Vendor portal</span>'; menu.append(link); } });
 const pageLinks = { dashboard: 'index.html', events: 'event.html', participants: 'participants.html', submissions: 'submissions.html', analytics: 'analyticsandreports.html', settings: 'settings.html' };
 document.querySelectorAll('.nav-link[data-view]').forEach((item) => { const href = pageLinks[item.dataset.view]; if (href) { const link = document.createElement('a'); link.className = item.className; link.href = href; link.innerHTML = item.innerHTML; item.replaceWith(link); } });
 const statusBadge = (value) => `<span class="status ${value === 'Draft' ? 'draft' : value === 'Needs review' ? 'review' : ''}">${value}</span>`;
